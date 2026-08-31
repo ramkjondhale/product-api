@@ -44,5 +44,10 @@ class ProductController extends Controller
         return ['status' => true, 'data' => new ProductResource($product)];
     }
 
-    public function destroy(string $id) {}
+    public function destroy(string $id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return ['status' => true, 'message' => 'Product Deteleted'];
+    }
 }
