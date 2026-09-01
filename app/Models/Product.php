@@ -12,4 +12,9 @@ class Product extends Model
         'product_detail',
         'product_image'
     ];
+
+    public function product_type()
+    {
+        return $this->belongsTo(ProductType::class);
+    }
 }

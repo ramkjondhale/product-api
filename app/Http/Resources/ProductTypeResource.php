@@ -18,6 +18,7 @@ class ProductTypeResource extends JsonResource
             'id' => $this->id,
             'type_name' => $this->type_name,
             'slug' => $this->slug,
+            'products' => ProductResource::collection($this->whenLoaded('products')),
             'created_at' => $this->created_at->toDateTimeString(),
             'updated_at' => $this->updated_at->toDateTimeString(),
         ];

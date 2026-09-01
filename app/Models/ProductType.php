@@ -10,4 +10,9 @@ class ProductType extends Model
         'type_name',
         'slug',
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

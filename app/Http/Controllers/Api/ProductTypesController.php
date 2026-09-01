@@ -14,7 +14,7 @@ class ProductTypesController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        $productType = ProductType::latest()->paginate(10);
+        $productType = ProductType::with('products')->latest()->paginate(10);
         return ProductTypeResource::collection($productType);
     }
 

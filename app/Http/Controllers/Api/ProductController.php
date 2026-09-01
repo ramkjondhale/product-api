@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::latest()->paginate(10);
+        $products = Product::with('product_type')->latest()->paginate(10);
         return ProductResource::collection($products);
     }
 
